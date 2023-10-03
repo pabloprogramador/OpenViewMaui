@@ -20,7 +20,7 @@ namespace OpenViewMaui
 #if ANDROID
             return new OpenViewMaui.Platforms.Android.OpenViewAndroid();
 #elif IOS
-            
+            return new OpenViewMaui.Platforms.iOS.OpenViewiOS();
 #elif MACCATALYST
             
 #elif WINDOWS

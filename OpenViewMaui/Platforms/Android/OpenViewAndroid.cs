@@ -37,7 +37,7 @@ namespace OpenViewMaui.Platforms.Android
             if (renderer != null)
             {
                 DecoreView?.RemoveView(renderer.PlatformView as AView);
-                renderer.DisconnectHandler(); //?? no clue if works
+                renderer.DisconnectHandler();
                 page.Parent = null;
 
                 return PostAsync(DecoreView);

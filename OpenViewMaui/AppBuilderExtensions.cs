@@ -12,7 +12,7 @@ namespace OpenViewMaui
 #if ANDROID
                 handlers.AddHandler(typeof(OpenViewPage), typeof(OpenViewMaui.Platforms.Android.OpenViewPageHandler));
 #elif IOS
-             
+                handlers.AddHandler(typeof(OpenViewPage), typeof(OpenViewMaui.Platforms.iOS.OpenViewPageHandler));
 #endif
             });
             return builder;
