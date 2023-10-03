@@ -3,16 +3,28 @@
 public partial class MainPage : ContentPage
 {
 	int count = 0;
+	OpenViewMaui.OpenView openView;
 
 	public MainPage()
 	{
 		InitializeComponent();
+        openView = new OpenViewMaui.OpenView(new ItemPage());
+    }
+
+	private void OnOpen(object sender, EventArgs e)
+	{
+		openView.Show();
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		var openView = new OpenViewMaui.OpenView(new ItemPage());
-	}
+    private void OnClose(object sender, EventArgs e)
+    {
+        openView.Hide();
+    }
+
+    private void OnOpenPage1(object sender, EventArgs e)
+    {
+		Shell.Current.GoToAsync(nameof(Page1));
+    }
 }
 
 

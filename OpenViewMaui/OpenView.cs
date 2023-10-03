@@ -5,6 +5,7 @@ namespace OpenViewMaui
 {
     public class OpenView
     {
+        private bool _isShow;
         private static readonly Lazy<IOpenViewPlatform> lazyImplementation = new(() => GeneratePlatform(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
 
         private readonly IOpenViewPlatform OpenViewPlatform = lazyImplementation.Value;
@@ -30,14 +31,24 @@ namespace OpenViewMaui
             }
         }
 
-        public OpenView(OpenViewPage contentPage)
+        OpenViewPage _page;
+
+        public OpenView(OpenViewPage page)
         {
-            OpenViewPlatform.AddAsync(contentPage);
+            _page = page;
+            _page.BackgroundColor = Color.FromArgb("#01000000");
         }
 
-        public void Close()
+        public void Show()
         {
+            if (_isShow) return; _isShow = true;
+            OpenViewPlatform.AddAsync(_page);
+        }
 
+        public void Hide()
+        {
+            if (!_isShow) return; _isShow = false;
+            OpenViewPlatform.RemoveAsync(_page);
         }
     }
 }
