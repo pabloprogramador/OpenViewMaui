@@ -2,8 +2,8 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-	OpenViewMaui.OpenView openView;
+	
+	private OpenViewMaui.OpenView openView;
 
 	public MainPage()
 	{
