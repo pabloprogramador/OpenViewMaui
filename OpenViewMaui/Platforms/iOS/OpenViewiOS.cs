@@ -9,11 +9,7 @@ namespace OpenViewMaui.Platforms.iOS
     {
         private readonly List<UIWindow> _windows = new List<UIWindow>();
 
-        private static bool IsiOS9OrNewer => UIDevice.CurrentDevice.CheckSystemVersion(9, 0);
-
         private static bool IsiOS13OrNewer => UIDevice.CurrentDevice.CheckSystemVersion(13, 0);
-
-        public bool IsSystemAnimationEnabled => true;
 
         public Task AddAsync(OpenViewPage page)
         {
@@ -23,7 +19,7 @@ namespace OpenViewMaui.Platforms.iOS
 
             var keyWindow = GetKeyWindow(UIApplication.SharedApplication);
             if (keyWindow?.WindowLevel == UIWindowLevel.Normal)
-                keyWindow.WindowLevel = -1;
+                keyWindow.WindowLevel = -2;
 
             var handler = (OpenViewPageHandler)IOpenViewPlatform.GetOrCreateHandler<OpenViewPageHandler>(page);
 

@@ -32,6 +32,14 @@
                 Text="Navigation Open Page1"
                 Clicked="OnOpenPage1"
                 />
+             <Button
+                Text="Navigation Open Popup"
+                Clicked="OnOpenPopup"
+                />
+            <Button
+                Text="Toast" BackgroundColor="Black"
+                Clicked="OnToast"
+                />
             <Entry Placeholder="Teste Keyboard" PlaceholderColor="CadetBlue" Margin="20" FontSize="24" BackgroundColor="AliceBlue" TextColor="DarkBlue" />
         </VerticalStackLayout>
     </ScrollView>

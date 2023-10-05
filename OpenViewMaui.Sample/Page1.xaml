@@ -10,6 +10,7 @@
             Text="PAGE 1" FontSize="34" TextColor="White"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+         <Entry Text="teste" BackgroundColor="AliceBlue"/>
 
     </Grid>
 </ContentPage>

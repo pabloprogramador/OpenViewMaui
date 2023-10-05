@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:openview="clr-namespace:OpenViewMaui;assembly=OpenViewMaui"
              x:Class="OpenViewMaui.Sample.ItemPage">
-    <VerticalStackLayout BackgroundColor="Yellow"
-                         HeightRequest="100" WidthRequest="200"
+    <VerticalStackLayout BackgroundColor="Yellow" Padding="15"
+                         HeightRequest="180" WidthRequest="200"
                          VerticalOptions="End" HorizontalOptions="End">
         <Label 
             Text="+ OPTIONS" FontSize="28" FontAttributes="Bold"
             VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
             HorizontalOptions="Center" />
+        <Button Text="Close" Clicked="Button_Clicked"/>
     </VerticalStackLayout>
 </openview:OpenViewPage>

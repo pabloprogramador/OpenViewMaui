@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<openview:OpenViewPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OpenViewMaui.Sample.ToastOpenView"
+             xmlns:openview="clr-namespace:OpenViewMaui;assembly=OpenViewMaui">
+    <Grid IgnoreSafeArea="True" x:Name="pgGrid" HeightRequest="90" Margin="20,0"
+          VerticalOptions="Start">
+        <Grid BackgroundColor="#D8000000"/>
+        <Label 
+            Text="TOAST to .NET MAUI!"
+            TextColor="LightYellow" FontSize="16"
+            VerticalTextAlignment="Center"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <ImageButton Clicked="ImageButton_Clicked"/>
+    </Grid>
+</openview:OpenViewPage>

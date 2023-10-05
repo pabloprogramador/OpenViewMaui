@@ -37,6 +37,7 @@ namespace OpenViewMaui
         {
             _page = page;
             _page.BackgroundColor = Color.FromArgb("#01000000");
+            _page.OpenView = this;
         }
 
         public void Show()
