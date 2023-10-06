@@ -19,6 +19,7 @@ var builder = MauiApp.CreateBuilder();
 ```
 
 <img src="imagens/open2.gif" height="400">
+<img src="imagens/open3.gif" height="400">
 
 You can use the OpenView:
 ```javascript
