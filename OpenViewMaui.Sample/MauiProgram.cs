@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using Mopups.Hosting;
 
 namespace OpenViewMaui.Sample;
 
@@ -15,8 +14,7 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			})
-			.UseOpenViewMaui()
-            .ConfigureMopups();
+			.UseOpenViewMaui();
 
 #if DEBUG
 		builder.Logging.AddDebug();

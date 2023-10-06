@@ -32,10 +32,6 @@
                 Text="Navigation Open Page1"
                 Clicked="OnOpenPage1"
                 />
-             <Button
-                Text="Navigation Open Popup"
-                Clicked="OnOpenPopup"
-                />
             <Button
                 Text="Toast" BackgroundColor="Black"
                 Clicked="OnToast"

@@ -1,6 +1,4 @@
-﻿using Mopups.Pages;
-using Mopups.Services;
-
+﻿
 namespace OpenViewMaui.Sample;
 
 public partial class MainPage : ContentPage
@@ -35,10 +33,6 @@ public partial class MainPage : ContentPage
         toast.Show();
     }
 
-    private async void OnOpenPopup(object sender, EventArgs e)
-    {
-        await MopupService.Instance.PushAsync(new LixoPopup());
-    }
 }
 
 

@@ -17,7 +17,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
 		<PackageId>OpenViewMaui</PackageId>
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<Authors>pabloprogramador@gmail.com</Authors>
 		<Description>A simple plugin to open a page on above of everything, it sits on top of the navigation and modules, with it you have the freedom to create a toast, popup, dialog, tips or window that opens over the entire application.</Description>
 	</PropertyGroup>
