@@ -9,30 +9,43 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-        openView = new OpenViewMaui.OpenView(new ItemPage());
+        openView = new OpenViewMaui.OpenView(new ItemPage(), value =>
+        {
+            pgText.Text = (string)value;
+        });
     }
 
-	private void OnOpen(object sender, EventArgs e)
+	private async void OnOpen(object sender, EventArgs e)
 	{
-		openView.Show();
+		await openView.Show();
 	}
 
-    private void OnClose(object sender, EventArgs e)
+    private async void OnClose(object sender, EventArgs e)
     {
-        openView.Hide();
+        await openView.Hide();
     }
 
-    private void OnOpenPage1(object sender, EventArgs e)
+    private async void OnOpenPage1(object sender, EventArgs e)
     {
-		Shell.Current.GoToAsync(nameof(Page1));
+		await Shell.Current.GoToAsync(nameof(Page1));
     }
 
-    private void OnToast(object sender, EventArgs e)
+    private async void OnToast(object sender, EventArgs e)
     {
         var toast = new OpenViewMaui.OpenView(new ToastOpenView());
-        toast.Show();
+        await toast.Show();
     }
 
+    async void OnOpenBottomSheet(System.Object sender, System.EventArgs e)
+    {
+        Action<object> callBack = value =>
+        {
+            pgText.Text = (string)value;
+        };
+
+        var bottomSheet = new BottomSheet(new MyList(), callBack);
+        await bottomSheet.Show();
+    }
 }
 
 

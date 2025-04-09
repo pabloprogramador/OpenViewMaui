@@ -1,14 +1,17 @@
 ﻿namespace OpenViewMaui.Sample;
 
-public partial class ItemPage : OpenViewPage
+public partial class MyList : BottomSheetView
 {
-	public ItemPage()
+
+
+    public MyList()
 	{
 		InitializeComponent();
+
 	}
 
     async void Button_Clicked(System.Object sender, System.EventArgs e)
     {
-		await this.OpenView.Hide("popup");
+        await this.BottomSheet.CloseBottomSheet("CallBack OK !!!");
     }
 }

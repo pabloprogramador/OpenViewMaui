@@ -31,25 +31,34 @@ namespace OpenViewMaui
             }
         }
 
-        OpenViewPage _page;
+        public OpenViewPage PageView;
 
-        public OpenView(OpenViewPage page)
+        public Action<object> CallBack;
+
+        public OpenView(OpenViewPage page, Action<object> callback = null)
         {
-            _page = page;
-            _page.BackgroundColor = Color.FromArgb("#01000000");
-            _page.OpenView = this;
+            PageView = page;
+            PageView.BackgroundColor = Color.FromArgb("#01000000");
+            PageView.OpenView = this;
+            CallBack = callback;
         }
 
-        public void Show()
+        public async Task Show()
         {
             if (_isShow) return; _isShow = true;
-            OpenViewPlatform.AddAsync(_page);
+            await OpenViewPlatform.AddAsync(PageView);
         }
 
-        public void Hide()
+        public async Task Hide(object obj = null)
         {
             if (!_isShow) return; _isShow = false;
-            OpenViewPlatform.RemoveAsync(_page);
+            await OpenViewPlatform.RemoveAsync(PageView);
+            if (obj != null)
+            {
+                CallBack?.Invoke(obj);
+            }
+
         }
+
     }
 }

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<openview:OpenViewPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:openview="clr-namespace:OpenViewMaui"
+             x:Class="OpenViewMaui.BottomSheetBase"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="False"
+             Title="BottomSheetBase">
+    <Grid IgnoreSafeArea="True"
+        x:Name="pgGridRoot">
+
+        <Grid
+            x:Name="pgBackgroundGrid"
+            BackgroundColor="Black"
+            Opacity="0"/>
+
+        <ImageButton
+            BackgroundColor="Transparent"
+            Clicked="PgBackgroundClicked"/>
+
+        <Grid IgnoreSafeArea="True"
+            x:Name="pgGridDrawer">
+
+            <ImageButton
+                BackgroundColor="Transparent" />
+
+            <Border
+                x:Name="pgBorderDrawer"
+
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 24,24,0,0"
+                Padding="0,16">
+            </Border>
+
+            <Grid
+                RowDefinitions="32,*">
+
+                <Border
+                    x:Name="pgRectangle"
+                    WidthRequest="40"
+                    HeightRequest="4"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 4"
+                    BackgroundColor="#E8E8E8"/>
+
+                <ScrollView
+                    x:Name="pgScrollContent"
+                    Grid.Row="1"
+                    VerticalOptions="Start">
+
+                    <Grid
+                        Margin="16,0"
+                        x:Name="pgViewContent"/>
+
+                </ScrollView>
+
+                <ImageButton
+                    x:Name="pgImagePanGesture"
+                    BackgroundColor="Transparent"
+                    TranslationY="0"
+                    HeightRequest="150" >
+
+                    <ImageButton.GestureRecognizers>
+                        <PanGestureRecognizer PanUpdated="PanGestureRecognizerPanUpdated"/>
+                    </ImageButton.GestureRecognizers>
+
+                </ImageButton>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</openview:OpenViewPage>
+
+

@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Shell.NavBarIsVisible="True"
              Shell.NavBarHasShadow="True"
-             x:Class="OpenViewMaui.Sample.MainPage">
+             x:Class="OpenViewMaui.Sample.MainPage"
+             BackgroundColor="Orange">
 
     <ScrollView>
         <VerticalStackLayout
@@ -14,9 +15,9 @@
             <Image
                 Source="dotnet_bot.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
+                HeightRequest="100"
                 HorizontalOptions="Center" />
-
+            <Label x:Name="pgText" HorizontalOptions="Center" Text="Waiting..." FontSize="22"/>
             <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
                 <Button  BackgroundColor="GreenYellow" TextColor="Black"
                 Text="Open View"
@@ -27,7 +28,11 @@
                 Clicked="OnClose"
                 />
             </Grid>
-
+             <Button
+                 BackgroundColor="BlueViolet"
+                Text="Open BottomSheet"
+                Clicked="OnOpenBottomSheet"
+                />
             <Button
                 Text="Navigation Open Page1"
                 Clicked="OnOpenPage1"
@@ -36,7 +41,7 @@
                 Text="Toast" BackgroundColor="Black"
                 Clicked="OnToast"
                 />
-            <Entry Placeholder="Teste Keyboard" PlaceholderColor="CadetBlue" Margin="20" FontSize="24" BackgroundColor="AliceBlue" TextColor="DarkBlue" />
+            <Entry x:Name="pgEntry" Placeholder="Teste Keyboard" PlaceholderColor="CadetBlue" Margin="20" FontSize="24" BackgroundColor="AliceBlue" TextColor="DarkBlue" />
         </VerticalStackLayout>
     </ScrollView>
 

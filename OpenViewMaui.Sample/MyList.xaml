@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<openview:BottomSheetView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:openview="clr-namespace:OpenViewMaui;assembly=OpenViewMaui"
+             x:Class="OpenViewMaui.Sample.MyList">
+    <VerticalStackLayout Spacing="29">
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" FontSize="22" />
+        <Label 
+            Text="Bottom Sheet has a callback"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" FontSize="18" TextColor="Gray" />
+         <Label 
+            Text="its a line"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" FontSize="18" TextColor="Gray" />
+         <Label 
+            Text="its a other line"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" FontSize="18" TextColor="Gray" />
+        <Button Text="CallBack" Clicked="Button_Clicked" />
+    </VerticalStackLayout>
+</openview:BottomSheetView>
+

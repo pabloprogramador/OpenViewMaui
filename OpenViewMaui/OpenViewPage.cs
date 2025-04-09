@@ -9,7 +9,7 @@ namespace OpenViewMaui
 	{
         public OpenView OpenView;
 
-		public OpenViewPage()
+        public OpenViewPage()
 		{
 #if IOS
             On<iOS>().SetUseSafeArea(false);
